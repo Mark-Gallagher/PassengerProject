@@ -17,6 +17,8 @@ public class Passenger {
         return title;
     }
 
+    public String getName() {return name; }
+
     public void setTitle(String title) {
         if (title == "Mr" || title == "Mrs" || title == "Ms") {
             this.title = title;

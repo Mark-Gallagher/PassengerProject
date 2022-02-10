@@ -1,3 +1,5 @@
+package ie.gmit;
+
 import ie.gmit.Passenger;
 import org.junit.jupiter.api.Test;
 
@@ -14,13 +16,13 @@ public class PassengerTest{
         assertEquals( "Mr", pass.getTitle());
 
     }
-//    @Test
-//    public void testName(){
-//
-//        pass = new Passenger("Mr" , "Mark", "6138294173", "1943678145",24);
-//        assertEquals( "Mark", pass.setName("Paul"));
-//
-//    }
+    @Test
+    public void testName(){
+
+        pass = new Passenger("Mr" , "Maj", "6138294173", "1943678145",24);
+        assertEquals( "Paul", pass.getName());
+
+    }
     @Test
     void testConstructorInvalidTitle(){
         final String invalid = "Invalid title entered";
@@ -28,11 +30,11 @@ public class PassengerTest{
         assertEquals(invalid,exception.getMessage());
     }
 
-//    @Test
-//    void testConstructorInvalidName(){
-//        final String invalid = "Invalid name entered";
-//        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Miss", "Paul","5172839645", "1945882691",35));
-//        assertEquals(invalid,exception.getMessage());
-//    }
+    @Test
+    void testConstructorInvalidName(){
+        final String invalid = "Invalid name entered";
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Miss", "Paul","5172839645", "1945882691",35));
+        assertEquals(invalid,exception.getMessage());
+    }
 
 }
