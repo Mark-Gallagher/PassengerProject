@@ -28,6 +28,13 @@ public class PassengerTest{
         assertEquals( "6138294173", pass.getId());
 
     }
+    @Test
+    public void testPhone(){
+
+        pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
+        assertEquals( "1943678145", pass.getPhone());
+
+    }
 
     @Test
     void testConstructorInvalidTitle(){
@@ -39,15 +46,21 @@ public class PassengerTest{
     @Test
     void testConstructorInvalidName(){
         final String invalid_name = "Invalid name Entered!";
-        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "oj","517826396450", "1945971381",38));
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "Jo","517826396450", "1945971381",35));
         assertEquals(invalid_name,exception.getMessage());
     }
 
     @Test
     void testConstructorInvalidId(){
         final String  invalid_id = "Invalid Id number Entered!";
-        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "Patrick","56810746", "1945971381",38));
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "John","51782639", "1945971381",35));
         assertEquals(invalid_id,exception.getMessage());
+    }
+    @Test
+    void testConstructorInvalidPhone(){
+        final String  invalid_ph = "Invalid Phone number Entered!";
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "John","517826396450", "19459",35));
+        assertEquals(invalid_ph,exception.getMessage());
     }
 
 }
