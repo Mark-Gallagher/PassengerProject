@@ -1,6 +1,5 @@
 package ie.gmit;
 
-import ie.gmit.Passenger;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,29 +11,43 @@ public class PassengerTest{
     @Test
     public void testTitle(){
 
-        pass = new Passenger("Mr" , "Mark", "6138294173", "1943678145",24);
+        pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
         assertEquals( "Mr", pass.getTitle());
-
     }
     @Test
     public void testName(){
 
-        pass = new Passenger("Mr" , "Maj", "6138294173", "1943678145",24);
-        assertEquals( "Paul", pass.getName());
+        pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
+        assertEquals( "Pete", pass.getName());
 
     }
     @Test
+    public void testId(){
+
+        pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
+        assertEquals( "6138294173", pass.getId());
+
+    }
+
+    @Test
     void testConstructorInvalidTitle(){
-        final String invalid = "Invalid title entered";
-        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mrs", "Mary","5172839645", "1945882691",35));
-        assertEquals(invalid,exception.getMessage());
+        final String invalid_title = "Invalid title Entered!";
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mmms", "John","51472839645", "1945882691",35));
+        assertEquals(invalid_title,exception.getMessage());
     }
 
     @Test
     void testConstructorInvalidName(){
-        final String invalid = "Invalid name entered";
-        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Miss", "Paul","5172839645", "1945882691",35));
-        assertEquals(invalid,exception.getMessage());
+        final String invalid_name = "Invalid name Entered!";
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "oj","517826396450", "1945971381",38));
+        assertEquals(invalid_name,exception.getMessage());
+    }
+
+    @Test
+    void testConstructorInvalidId(){
+        final String  invalid_id = "Invalid Id number Entered!";
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "Patrick","56810746", "1945971381",38));
+        assertEquals(invalid_id,exception.getMessage());
     }
 
 }

@@ -11,13 +11,18 @@ public class Passenger {
     public Passenger(String title, String name, String id, String phone, int age) {
        setTitle(title);
        setName(name);
-    }
+       setId(id);
+   }
 
     public String getTitle() {
         return title;
     }
 
     public String getName() {return name; }
+
+    public String getId(){
+        return id;
+    }
 
     public void setTitle(String title) {
         if (title == "Mr" || title == "Mrs" || title == "Ms") {
@@ -29,14 +34,25 @@ public class Passenger {
     }
 
     public String setName(String name) {
-        if(name.length() <= 3){
+        if(name.length() >= 3){
             this.name = name;
         }
         else{
-            throw new IllegalArgumentException("Invalid title Entered!");
+            throw new IllegalArgumentException("Invalid name Entered!");
         }
 
         return this.name;
+    }
+
+    public String setId(String id) {
+        if(id.length() >= 10){
+            this.id = id;
+        }
+        else{
+            throw new IllegalArgumentException("Invalid Id number Entered!");
+        }
+
+        return this.id;
     }
 
 }
