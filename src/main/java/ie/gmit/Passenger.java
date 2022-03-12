@@ -20,7 +20,9 @@ public class Passenger {
         return title;
     }
 
-    public String getName() {return name; }
+    public String getName() {
+        return name; 
+    }
 
     public String getId(){
         return id;
@@ -68,12 +70,12 @@ public class Passenger {
         }
     }
     
-    private void setPhone(String phone) {
+    private void setPhone(String age) {
         if(age >= 16){
-            this.age= phone;
+            this.age= age;
         }
         else{
-            throw new IllegalArgumentException("Invalid Phone number Entered!");
+            throw new IllegalArgumentException("Invalid age Entered!");
         }
     }  
 }
