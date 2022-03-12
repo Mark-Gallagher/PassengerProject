@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TemperatureConversion" />
-        <module name="PassengerProject" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TemperatureConversion" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
