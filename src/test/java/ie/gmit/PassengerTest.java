@@ -52,13 +52,13 @@ public class PassengerTest{
 
     @Test
     void testConstructorInvalidId(){
-        final String  invalid_id = "Invalid Id number Entered!";
+        final String invalid_id = "Invalid Id number Entered!";
         Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "John","51782639", "1945971381",35));
         assertEquals(invalid_id,exception.getMessage());
     }
     @Test
     void testConstructorInvalidPhone(){
-        final String  invalid_ph = "Invalid Phone number Entered!";
+        final String invalid_ph = "Invalid Phone number Entered!";
         Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "John","517826396450", "19459",35));
         assertEquals(invalid_ph,exception.getMessage());
     }
