@@ -59,7 +59,7 @@ public class Passenger {
         }
     }
     
-    private void setPhone(String phone) {
+    public void setPhone(String phone) {
         if(phone.length() >= 7){
             this.phone = phone;
         }
@@ -68,7 +68,7 @@ public class Passenger {
         }
     }
     
-    private void setAge(int age) {
+    public void setAge(int age) {
         if(age >= 16){
             this.age = age;
         }
