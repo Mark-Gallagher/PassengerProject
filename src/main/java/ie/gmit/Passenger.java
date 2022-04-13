@@ -29,8 +29,8 @@ public class Passenger {
     public String getPhone() {
         return phone;
     }
-    public String getPhone() {
-        return phone;
+    public String getAge() {
+        return age;
     }
 
     public void setTitle(String title) {
@@ -55,7 +55,7 @@ public class Passenger {
             this.id = id;
         }
         else{
-            throw new IllegalArgumentException("Invalid Id number Entered!");
+            throw new IllegalArgumentException("Invalid id number Entered!");
         }
     }
     
@@ -64,16 +64,16 @@ public class Passenger {
             this.phone = phone;
         }
         else{
-            throw new IllegalArgumentException("Invalid Phone number Entered!");
+            throw new IllegalArgumentException("Invalid phone number Entered!");
         }
     }
     
-    private void setPhone(String phone) {
+    private void setAge(int age) {
         if(age >= 16){
-            this.age= phone;
+            this.age = age;
         }
         else{
-            throw new IllegalArgumentException("Invalid Phone number Entered!");
+            throw new IllegalArgumentException("Invalid age Entered!");
         }
     }  
 }
