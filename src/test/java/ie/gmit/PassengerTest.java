@@ -7,33 +7,38 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PassengerTest{
 
-    private Passenger pass;
+      private Passenger pass;
+
+    @BeforeEach
+    void setup(){
+        pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
+    }
+    
     @Test
     public void testTitle(){
-
-        pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
+        //pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
         assertEquals( "Mr", pass.getTitle());
     }
     @Test
     public void testName(){
-
-        pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
+        //pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
         assertEquals( "Pete", pass.getName());
-
     }
     @Test
     public void testId(){
-
-        pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
+        //pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
         assertEquals( "6138294173", pass.getId());
-
     }
     @Test
     public void testPhone(){
-
-        pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
+        //pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
         assertEquals( "1943678145", pass.getPhone());
+    }
 
+    @Test
+    public void testAge(){
+        //pass = new Passenger("Mr" , "Pete", "6138294173", "1943678145",24);
+        assertEquals( 24, pass.getAge());
     }
 
     @Test
@@ -52,15 +57,20 @@ public class PassengerTest{
 
     @Test
     void testConstructorInvalidId(){
-        final String invalid_id = "Invalid Id number Entered!";
+        final String invalid_id = "Invalid id number Entered!";
         Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "John","51782639", "1945971381",35));
         assertEquals(invalid_id,exception.getMessage());
     }
     @Test
     void testConstructorInvalidPhone(){
-        final String invalid_ph = "Invalid Phone number Entered!";
+        final String invalid_ph = "Invalid phone number Entered!";
         Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "John","517826396450", "19459",35));
         assertEquals(invalid_ph,exception.getMessage());
     }
-
+    @Test
+    void testConstructorInvalidAge(){
+        final String invalid_age = "Invalid age Entered!";
+        Exception exception = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mr", "John","517826396450", "1945971381",15));
+        assertEquals(invalid_age,exception.getMessage());
+    }
 }
